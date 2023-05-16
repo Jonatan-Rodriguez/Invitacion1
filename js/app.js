@@ -1,9 +1,9 @@
 const seccionesPaginas = new fullpage('#fullpage',{
 
     navigation: true,
-    anchors: ['inicio', 'infoEvento', 'galeria','regalos','confirmacion'],
-    navigationTooltips: ['Inicio', 'Donde y cuando', 'Galeria de fotos', 'Regalos', 'Confirmacion'],
-    sectionsColor : ['#000', '#ffd166', '#ef476f','#06d6a0' ,'#118ab2'],
+    anchors: ['inicio', 'infoEvento',',miFrase','confirmacion'],
+    navigationTooltips: ['Inicio', 'Donde y cuando', 'Mi frase', 'Confirmacion'],
+    sectionsColor : ['#000', '#ffd166' , '#ef476f','#06d6a0'],
     verticalCentered: true,
   });
   
@@ -40,91 +40,7 @@ const seccionesPaginas = new fullpage('#fullpage',{
       }, 1000)
     };
     
-    countdown('Jun 30 2023 21:00:00 GMT-0300', 'clock', '¡Feliz cumpleaños!');
-  
-  //Slider de fotos
-  const slider = document.querySelector("#slider");
-  let sliderSection = document.querySelectorAll(".slider__section");
-  let sliderSectionLast = sliderSection[sliderSection.length -1];
-  
-  const btnLeft = document.querySelector("#btn-left");
-  const btnRight = document.querySelector("#btn-right");
-  
-  //corremos la ultima foto al primer lugar
-  slider.insertAdjacentElement('afterbegin', sliderSectionLast);
-  
-  function next(){
-    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
-    slider.style.marginLeft="-200%";
-    slider.style.transition = "all 0.5s";
-  
-    setTimeout(function(){
-      slider.style.transition= "none";
-      slider.insertAdjacentElement('beforeend', sliderSectionFirst);
-      slider.style.marginLeft = "-100%";
-    }, 500);
-  };
-  
-  function prev(){
-    let sliderSection = document.querySelectorAll(".slider__section");
-    let sliderSectionLast = sliderSection[sliderSection.length -1];
-    slider.style.marginLeft="0";
-    slider.style.transition = "all 0.5s";
-  
-    setTimeout(function(){
-      slider.style.transition= "none";
-      slider.insertAdjacentElement('afterbegin', sliderSectionLast);
-      slider.style.marginLeft = "-100%";
-    }, 500);
-  }
-  
-  btnRight.addEventListener('click', function(){
-    next();
-  });
-  
-  btnLeft.addEventListener('click', function(){
-    prev();
-  });
-  
-  //copy paste
-  let inputCbu = document.getElementById(`inputCbu`);
-  let btnCbu = document.getElementById(`btnCbu`);
-  let inputAlias = document.getElementById(`inputAlias`);
-  let btnAlias = document.getElementById(`btnAlias`); 
-  let noti = document.getElementById(`noti`);
-  let notificacion = document.getElementById(`notificacion`);
-    
-  btnCbu.addEventListener(`click`, ()=>{
-      inputCbu.focus();
-      document.execCommand(`selectAll`);
-      document.execCommand(`copy`);
-      
-      setTimeout(()=>{
-          noti.classList.add(`noti-active`);
-          notificacion.classList.add(`notificacion-active`);
-      },500);
-    
-      setTimeout(()=>{
-        noti.classList.remove(`noti-active`);
-        notificacion.classList.remove(`notificacion-active`);
-    },3400);
-  });
-    
-  btnAlias.addEventListener(`click`, ()=>{
-      inputAlias.focus();
-      document.execCommand(`selectAll`);
-      document.execCommand(`copy`);
-      
-      setTimeout(()=>{
-        noti.classList.add(`noti-active`);
-        notificacion.classList.add(`notificacion-active`);
-      },500);
-  
-      setTimeout(()=>{
-        noti.classList.remove(`noti-active`);
-        notificacion.classList.remove(`notificacion-active`);
-      },3400);
-  });
+    countdown('May 27 2023 21:00:00 GMT-0300', 'clock', '¡Feliz cumpleaños!');
   
   //Formulario de confirmacion
   const send = document.getElementById('send');
@@ -142,7 +58,7 @@ const seccionesPaginas = new fullpage('#fullpage',{
   
     let nombre = document.getElementById('nombre').value;
     
-    let numero= 5491123901151;
+    let numero= 5491165163029;
     let opcion;
   
     for(let i = 0 ; i < form.opcion.length ; i++){
@@ -166,5 +82,15 @@ const seccionesPaginas = new fullpage('#fullpage',{
       break;
     }
   });
+
+//music
+let music = document.getElementById(`my_audio`);
+const playpause = document.querySelector('.playpause');
+
+playpause.addEventListener('click', () => {
+  playpause.classList.toggle('playing');
+
+  music.paused? music.play(): music.pause();
+});
   
   

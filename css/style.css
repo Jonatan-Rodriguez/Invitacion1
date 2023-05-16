@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Roboto&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Roboto&display=swap');
+ */
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Dancing+Script&family=Roboto&display=swap");
 /* misc */
 /* colors */
 /* spacings */
@@ -104,7 +106,18 @@ html {
   text-align: center; }
 
 .section-1 {
-  align-items: center; }
+  align-items: center;
+  /* @keyframes imgZoom {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.2);
+        }
+        100%{
+            transform: scale(1);
+        }
+    } */ }
   .section-1__pic {
     width: 100%;
     height: 100%;
@@ -114,16 +127,8 @@ html {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      animation: imgZoom 30s linear infinite;
+      /* animation:imgZoom 30s linear infinite; */
       mix-blend-mode: multiply; }
-
-@keyframes imgZoom {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.2); }
-  100% {
-    transform: scale(1); } }
   .section-1 .contenedor {
     position: absolute;
     z-index: 1; }
@@ -271,110 +276,22 @@ html {
   background-size: cover; }
   .section-4 .contenedor .text {
     margin-bottom: 2rem; }
-  .section-4 .contenedor .box {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+  .section-4 .contenedor .box_frase {
     width: 100%;
-    height: 350px;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 20px;
+    border: 1px solid #e9c46a;
+    padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column; }
-    .section-4 .contenedor .box .box__text span {
-      font-size: 2.3em;
-      font-family: "Roboto", sans-serif;
-      color: white;
-      letter-spacing: 0.5px; }
-    .section-4 .contenedor .box .copy {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column; }
-      .section-4 .contenedor .box .copy .cbu {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 15px; }
-        .section-4 .contenedor .box .copy .cbu .text-cbu span {
-          font-size: 1.5em;
-          font-family: "Roboto", sans-serif; }
-        .section-4 .contenedor .box .copy .cbu .cbu-input {
-          min-width: 210px;
-          width: 100%;
-          height: 30px;
-          font-size: 15px;
-          border-radius: 20px;
-          border: none;
-          padding-left: 10px;
-          text-align: center;
-          outline: none;
-          pointer-events: none; }
-        .section-4 .contenedor .box .copy .cbu .cbu-input:focus {
-          outline: none; }
-        .section-4 .contenedor .box .copy .cbu .cbu-input::-moz-selection {
-          background-color: transparent; }
-        .section-4 .contenedor .box .copy .cbu .cbu-input::selection {
-          background-color: transparent; }
-        .section-4 .contenedor .box .copy .cbu .btn-copy {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-width: 210px;
-          width: 100%;
-          height: 30px;
-          background-color: white;
-          font-size: 20px;
-          border-radius: 20px;
-          cursor: pointer;
-          font-family: "Roboto", sans-serif; }
-      .section-4 .contenedor .box .copy .alias {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 15px; }
-        .section-4 .contenedor .box .copy .alias .text-alias span {
-          font-size: 1.5em;
-          font-family: "Roboto", sans-serif; }
-        .section-4 .contenedor .box .copy .alias .alias-input {
-          min-width: 210px;
-          width: 100%;
-          height: 30px;
-          font-size: 15px;
-          border-radius: 20px;
-          border: none;
-          padding-left: 10px;
-          text-align: center;
-          outline: none;
-          pointer-events: none; }
-        .section-4 .contenedor .box .copy .alias .alias-input:focus {
-          outline: none; }
-        .section-4 .contenedor .box .copy .alias .alias-input::-moz-selection {
-          background-color: transparent; }
-        .section-4 .contenedor .box .copy .alias .alias-input::selection {
-          background-color: transparent; }
-        .section-4 .contenedor .box .copy .alias .btn-copy {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-width: 210px;
-          width: 100%;
-          height: 30px;
-          background-color: white;
-          font-size: 20px;
-          border-radius: 20px;
-          cursor: pointer;
-          font-family: "Roboto", sans-serif; }
+    .section-4 .contenedor .box_frase .box__text {
+      text-align: center; }
+      .section-4 .contenedor .box_frase .box__text span {
+        font-size: 3em;
+        font-family: 'Dancing Script', cursive;
+        color: #e63946;
+        letter-spacing: 0.2px;
+        font-weight: bold; }
 
 .section-6 {
   background: url(../asset/img/confirmacion.jpg);
@@ -445,44 +362,28 @@ html {
         color: white;
         letter-spacing: 1px; }
 
-.contenedor-noti {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .contenedor-noti .noti {
-    width: 100%;
-    height: 1px;
-    background-color: #52b788;
-    position: fixed;
-    bottom: 0;
-    box-shadow: 0 0px 0px 0px #52b788;
-    transform: translateY(1px);
-    z-index: 2; }
-  .contenedor-noti .noti-active {
-    animation: 1.5s ease 0s infinite alternate noti-animation; }
+/*--------- reproductor ----------*/
+.playpause {
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+  bottom: 16px;
+  right: 5px;
+  display: block;
+  background: #e93b38;
+  z-index: 2; }
 
-@keyframes noti-animation {
-  to {
-    box-shadow: 0 -10px 120px 90px #52b788; } }
-  .contenedor-noti .notificacion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    height: 40px;
-    background-color: white;
-    font-size: 20px;
-    border-radius: 20px;
-    font-family: "Roboto", sans-serif;
-    position: fixed;
-    bottom: -45px;
-    z-index: 3; }
-  .contenedor-noti .notificacion-active {
-    animation: 1.4s ease 0s infinite alternate notificacion-animation; }
+.playpause .button {
+  width: 15px;
+  height: 15px;
+  background: #f0f0f0;
+  transition: inherit;
+  clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%); }
 
-@keyframes notificacion-animation {
-  to {
-    bottom: 35px; } }
+.playpause.playing .button {
+  clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%); }
 
 .container {
   display: flex;

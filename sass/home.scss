@@ -103,11 +103,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation:imgZoom 30s linear infinite;
+            /* animation:imgZoom 30s linear infinite; */
             mix-blend-mode: multiply;
         }
     }
-    @keyframes imgZoom {
+    /* @keyframes imgZoom {
         0%{
             transform: scale(1);
         }
@@ -117,7 +117,7 @@
         100%{
             transform: scale(1);
         }
-    }
+    } */
     .contenedor{
         position: absolute;
         z-index: 1;
@@ -320,134 +320,23 @@
         .text{
             margin-bottom: $spacing-small;
         }
-        .box{
-            background: rgba( 255, 255, 255, 0.25 );
-            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-            backdrop-filter: blur( 5px );
-            -webkit-backdrop-filter: blur( 5px );
+        .box_frase{
             width: 100%;
-            height: 350px;
-            border: 1px solid white;
-            border-radius: 10px;
-            padding: 20px;
+            border: 1px solid #e9c46a;
+            padding: 10px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
             
             .box__text{
+                text-align: center;
                 span{
-                    font-size: $font-base;
-                    font-family: $font-secondary;
-                    color: white;
-                    letter-spacing: 0.5px;
-                }
-            }
-            .copy{
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                flex-direction: column;
-
-                .cbu{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex-direction: column;
-                    row-gap: 15px;
-
-                    .text-cbu{
-                        span{
-                            font-size: $font-small;
-                            font-family: $font-secondary;
-                        }
-                    }
-                    .cbu-input{
-                        min-width: 210px;
-                        width: 100%;
-                        height: 30px;
-                        font-size: 15px;
-                        border-radius: 20px;
-                        border: none;
-                        padding-left: 10px;
-                        text-align: center;
-                        outline: none;
-	                    pointer-events: none;
-                    }
-                    .cbu-input:focus{
-                        outline: none;
-                    }
-                    .cbu-input::-moz-selection{
-                        background-color: transparent;
-                    }
-                    .cbu-input::selection{
-                        background-color: transparent;
-                    }
-                    .btn-copy{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        min-width: 210px;
-                        width: 100%;
-                        height: 30px;
-                        background-color: white;
-                        font-size: 20px;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        font-family: $font-secondary;
-                    }
-                }
-                .alias{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex-direction: column;
-                    row-gap: 15px;
-
-                    .text-alias{
-                        span{
-                            font-size: $font-small;
-                            font-family: $font-secondary;
-                        }
-                    }
-                    .alias-input{
-                        min-width: 210px;
-                        width: 100%;
-                        height: 30px;
-                        font-size: 15px;
-                        border-radius: 20px;
-                        border: none;
-                        padding-left: 10px;
-                        text-align: center;
-                        outline: none;
-	                    pointer-events: none;
-                    }
-                    .alias-input:focus{
-                        outline: none;
-                    }
-                    .alias-input::-moz-selection{
-                        background-color: transparent;
-                    }
-                    .alias-input::selection{
-                        background-color: transparent;
-                    }
-                    .btn-copy{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        min-width: 210px;
-                        width: 100%;
-                        height: 30px;
-                        background-color: white;
-                        font-size: 20px;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        font-family: $font-secondary;
-                    }
+                    font-size: 3em;
+                    font-family: 'Dancing Script', cursive;
+                    color: #e63946;
+                    letter-spacing: 0.2px;
+                    font-weight: bold;
                 }
             }
         }
@@ -537,52 +426,30 @@
     }
 }
 
-// estilos de la animacion de la notificacion copy-page
-.contenedor-noti{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .noti{
-        width: 100%;
-        height: 1px;
-        background-color: #52b788;
-        position: fixed;
-        bottom: 0;
-        box-shadow: 0 0px 0px 0px #52b788;
-        transform: translateY(1px);
-        z-index: 2;
-    }
-    .noti-active{
-        animation: 1.5s ease 0s infinite alternate noti-animation;
-    }
-    @keyframes noti-animation {
-        to {
-          box-shadow: 0 -10px 120px 90px #52b788;
-        }
-    }
-    .notificacion{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 180px;
-        height: 40px;
-        background-color: white;
-        font-size: 20px;
-        border-radius: 20px;
-        font-family: $font-secondary;
-        position: fixed;
-        bottom: -45px;
-        z-index: 3;
-    }
-    .notificacion-active{
-        animation: 1.4s ease 0s infinite alternate notificacion-animation;
-    }
-    @keyframes notificacion-animation {
-        to {
-            bottom: 35px;
-        }
-    }
+/*--------- reproductor ----------*/
+.playpause {
+	padding: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+	position: fixed;
+	bottom: 16px;
+	right:5px;
+	display: block;
+	background: #e93b38;
+    z-index: 2;
+}
+  
+.playpause .button {
+	width: 15px;
+	height: 15px;
+	background: #f0f0f0;
+	transition: inherit;
+	clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
+}
+  
+.playpause.playing .button {
+	clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 //estilos de animacion de checkbox
